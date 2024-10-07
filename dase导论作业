@@ -1,1 +1,96 @@
 
+1.编写Python程序，打印"数据科学与工程导论"，并使用 print(chr(0x2605)) 语句将这句话包围起来。
+
+print(chr(0x2605),chr(0x2605),chr(0x2605),chr(0x2605),chr(0x2605),chr(0x2605),chr(0x2605), chr(0x2605))
+print(chr(0x2605), "数据科学与工程导论",chr(0x2605))
+print(chr(0x2605),chr(0x2605),chr(0x2605),chr(0x2605),chr(0x2605),chr(0x2605),chr(0x2605), chr(0x2605))
+2.写一个 Python 程序，输入 x, y, z 这三个数，将这三个数从小到大使用 print 函数打印出来。
+x = int(input("第一个数 x: "))  
+y = int(input("第二个数 y: "))  
+z = int(input("第三个数 z: "))  
+numbers = [x, y, z]  
+numbers.sort()  
+print("从小到大:")  
+print(numbers[0], numbers[1], numbers[2])
+
+3.写一个 Python 程序，有 w, x, y, z 四个数，将这四个数从大到小使用 print 函数打印出来。
+a = int(input("第一个数: "))  
+b = int(input("第二个数: "))  
+c = int(input("第三个数: "))  
+d = int(input("第四个数: "))  
+numbers = [a,b,c,d]  
+numbers.sort()  
+print("从大到小:")  
+print(numbers[3], numbers[2],  numbers[1], numbers[0])
+4.写一个 Python 程序，输出 1-100 中的所有奇数。
+for number in range(1, 100):    
+    if number % 2 != 0:  
+        print(number, end=' ')
+5.写一个 Python 程序，用 for 循环，求解 1 到 100 的和。
+sum = 0
+for a in range(1,100):
+    sum += a
+print(sum)
+
+6.写一个 Python 程序，分别用 for 和 while 循环实现对一个给定序列的倒排序输出。例如，给定 L=[1,2,3,4,5]，输出为 [5,4,3,2,1]。
+l = []
+a = int(input("元素数量: ")) 
+for i in range(a):   
+    element = int(input(f"第 {i+1} 个元素: "))  
+    l.append(element)  
+
+# 使用 for 循环倒排序输出  
+l1 = []  
+for i in range(len(l) - 1, -1, -1):  
+    l1.append(l[i])  
+
+print("for 循环倒排序输出:", l1)
+
+
+# 使用 while 循环倒排序输出  
+l2 = []  
+i = len(l ) - 1  
+while i >= 0:  
+    l2.append(l[i])  
+    i -= 1 
+
+print("while 循环倒排序输出:", l2)
+7.写一个 Python 程序，判断一个输入的字符串 S 是否包含由两个或两个以上连续出现的相同字符组成的字符串。例如，abccccda 中就包含 cccc 这个由 4 个连续字符组成的字符串。
+s = input()
+for i in range(1, len(s)):  
+        if s[i] == s[i - 1]:  
+            print("包含")  
+        else:
+            print("不包含")
+
+8.写一个 Python 程序，输入一个字符串 S，去掉其中所有的空格后输出。例如，“DataScience and Engineering”，去掉空格后为“DataScienceandEngineering”。
+S = input()
+result = ""
+for char in S:
+    if char != " ":
+        result += char
+print(result )
+9.请设计一个求 3 次方根的算法（不允许直接调用求方根的函数），并给出对应的 Python 程序。 采用牛顿迭代法求解，迭代过程数学公式表示为： 
+
+a = int(input())
+def root(a,):
+    epsilon=1e-10
+    if a == 0:
+        return 0
+    
+    x = a / 2.0  
+    for _ in range(10000):
+        x_new = (2 * x + a / (x ** 2)) / 3
+        if abs(x_new - x) < epsilon:
+            return x_new
+        x = x_new
+    return x
+
+result = root(a)
+print(f"{result}")
+10.写一个 Python 程序，给定一个常数 n（n>0），求 n 的阶乘，即 n!=1×2×...×(n-1)×n。例如，4!=24，5!=120。
+n=int(input())
+A = 1
+for i in range(1, n + 1):
+        A *= i
+print(A)
